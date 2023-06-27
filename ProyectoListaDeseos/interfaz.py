@@ -1,6 +1,8 @@
 import tkinter as tk
 from conexionInterface import ConexionDB
 from tkinter import messagebox
+
+
 class InterfazListaDeseos:
     def __init__(self, conexion):
         self.conexion = conexion
@@ -9,12 +11,13 @@ class InterfazListaDeseos:
         self.ventana.title("Lista de Deseos")
         self.ventana.configure(bg="black")  # Configurar el color de fondo para tema oscuro
 
-        self.crear_interfaz()# Creamos la interfaz gráfica
+        self.crear_interfaz()  # Creamos la interfaz gráfica
 
     def crear_interfaz(self):
         # Crear los elementos de la interfaz
         # Título de la Interfaz
-        self.titulo_label = tk.Label(self.ventana, text="Lista de Deseos Grupo GIGABYTE", font=("Arial", 16), bg="black", fg="white")
+        self.titulo_label = tk.Label(self.ventana, text="Lista de Deseos Grupo GIGABYTE", font=("Arial", 16),
+                                     bg="black", fg="white")
         self.titulo_label.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
         # Etiqueta y campo de texto para ingresar el producto
         self.producto_label = tk.Label(self.ventana, text="Producto:", bg="black", fg="white")
@@ -35,7 +38,8 @@ class InterfazListaDeseos:
         self.precio_entry = tk.Entry(self.ventana, bg="black", fg="white")
         self.precio_entry.grid(row=3, column=1, padx=5, pady=5)
         # Botón para agregar un deseo
-        self.agregar_button = tk.Button(self.ventana, text="Agregar", command=self.agregar_deseo, bg="black", fg="white")
+        self.agregar_button = tk.Button(self.ventana, text="Agregar", command=self.agregar_deseo, bg="black",
+                                        fg="white")
         self.agregar_button.grid(row=4, column=0, columnspan=2, padx=5, pady=5)
         # Campo de texto para mostrar la lista de deseos
         self.eliminar_label = tk.Label(self.ventana, text="ID Deseo a eliminar:", bg="black", fg="white")
@@ -44,10 +48,12 @@ class InterfazListaDeseos:
         self.eliminar_entry = tk.Entry(self.ventana, bg="black", fg="white")
         self.eliminar_entry.grid(row=5, column=1, padx=5, pady=5)
         # Botón para eliminar un deseo por ID
-        self.eliminar_button = tk.Button(self.ventana, text="Eliminar por ID", command=self.eliminar_deseo, bg="black", fg="white")
+        self.eliminar_button = tk.Button(self.ventana, text="Eliminar por ID", command=self.eliminar_deseo, bg="black",
+                                         fg="white")
         self.eliminar_button.grid(row=6, column=0, columnspan=2, padx=5, pady=5)
         # Botón para eliminar todos los deseos
-        self.eliminar_todo_button = tk.Button(self.ventana, text="Eliminar Todo", command=self.eliminar_todo, bg="black", fg="white")
+        self.eliminar_todo_button = tk.Button(self.ventana, text="Eliminar Todo", command=self.eliminar_todo,
+                                              bg="black", fg="white")
         self.eliminar_todo_button.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
 
         self.lista_deseos_text = tk.Text(self.ventana, bg="black", fg="white")  # Configurar colores para tema oscuro
@@ -91,7 +97,8 @@ class InterfazListaDeseos:
 
     def eliminar_todo(self):
         # Código para eliminar todos los deseos de la base de datos
-        confirmacion = tk.messagebox.askquestion("Eliminar Todo", "¿Estás seguro de que deseas eliminar todos los deseos?")
+        confirmacion = tk.messagebox.askquestion("Eliminar Todo",
+                                                 "¿Estás seguro de que deseas eliminar todos los deseos?")
         if confirmacion == "yes":
             self.conexion.eliminar_todo()
             print("Todos los deseos han sido eliminados.")
