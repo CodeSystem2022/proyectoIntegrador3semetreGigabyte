@@ -50,4 +50,24 @@ class ConexionDB:#Definimos la clase
          )
          self.conexion.commit()
 
+def eliminar_todo(self):
+        # Eliminamos todos los registros de la tabla 'deseos'
+        cursor = self.conexion.cursor()
+        cursor.execute(
+            """
+            DELETE FROM deseos
+            """
+        )
+        self.conexion.commit()
+
+  def obtener_deseos(self):
+        # Obtenemos todos los registros de la tabla 'deseos'
+        cursor = self.conexion.cursor()
+        cursor.execute(
+            """
+            SELECT * FROM deseos
+            """
+        )
+        return cursor.fetchall()
+
 
