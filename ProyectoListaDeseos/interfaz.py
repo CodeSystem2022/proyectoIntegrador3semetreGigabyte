@@ -43,3 +43,37 @@ class InterfazListaDeseos:
 
         self.eliminar_entry = tk.Entry(self.ventana, bg="black", fg="white")
         self.eliminar_entry.grid(row=5, column=1, padx=5, pady=5)
+        # Botón para eliminar un deseo por ID
+        self.eliminar_button = tk.Button(self.ventana, text="Eliminar por ID", command=self.eliminar_deseo, bg="black", fg="white")
+        self.eliminar_button.grid(row=6, column=0, columnspan=2, padx=5, pady=5)
+        # Botón para eliminar todos los deseos
+        self.eliminar_todo_button = tk.Button(self.ventana, text="Eliminar Todo", command=self.eliminar_todo, bg="black", fg="white")
+        self.eliminar_todo_button.grid(row=7, column=0, columnspan=2, padx=5, pady=5)
+
+        self.lista_deseos_text = tk.Text(self.ventana, bg="black", fg="white")  # Configurar colores para tema oscuro
+        self.lista_deseos_text.grid(row=8, column=0, columnspan=2, padx=5, pady=5)
+
+        self.actualizar_lista_deseos()  # Mostrar la lista de deseos al iniciar la interfaz
+
+    def actualizar_lista_deseos(self):
+        deseos = self.conexion.obtener_deseos()
+
+        self.lista_deseos_text.delete("1.0", tk.END)  # Limpiar el campo de texto
+
+        if deseos:
+            for deseo in deseos:
+                texto = f"ID: {deseo[0]}, Producto: {deseo[1]}, Cantidad: {deseo[2]}, Precio: {deseo[3]}\n"
+                self.lista_deseos_text.insert(tk.END, texto)
+        else:
+            self.lista_deseos_text.insert(tk.END, "No hay elementos en la lista de deseos.")
+
+    def agregar_deseo(self):
+        # Código para agregar un deseo a la base de datos
+        producto = self.producto_entry.get()
+        cantidad = int(self.cantidad_entry.get())
+        precio = float(self.precio_entry.get())
+
+        self.conexion.agregar_deseo(producto, cantidad, precio)
+        print("Deseo agregado exitosamente.")
+
+        self.actualizar_lista_deseos()  # Actualizar la lista mostrada en la interfaz
