@@ -50,7 +50,7 @@ class ConexionDB:#Definimos la clase
          )
          self.conexion.commit()
 
-def eliminar_todo(self):
+    def eliminar_todo(self):
         # Eliminamos todos los registros de la tabla 'deseos'
         cursor = self.conexion.cursor()
         cursor.execute(
@@ -60,7 +60,7 @@ def eliminar_todo(self):
         )
         self.conexion.commit()
 
-  def obtener_deseos(self):
+    def obtener_deseos(self):
         # Obtenemos todos los registros de la tabla 'deseos'
         cursor = self.conexion.cursor()
         cursor.execute(
