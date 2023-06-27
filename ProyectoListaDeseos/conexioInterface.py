@@ -26,3 +26,28 @@ class ConexionDB:#Definimos la clase
             """
         )
         self.conexion.commit()
+     
+     def agregar_deseo(self, producto, cantidad, precio):
+        # Insertamos los datos en la tabla 'deseos'
+        cursor = self.conexion.cursor()
+        cursor.execute(
+            """
+            INSERT INTO deseos (producto, cantidad, precio)
+            VALUES (%s, %s, %s)
+            """,
+            (producto, cantidad, precio)
+        )
+        self.conexion.commit()
+      
+    def eliminar_deseo(self, id_deseo):
+        # Eliminamos el registro con el ID proporcionado de la tabla 'deseos'
+        cursor = self.conexion.cursor()
+        cursor.execute(
+            """
+            DELETE FROM deseos WHERE id = %s
+            """,
+            (id_deseo,)
+         )
+         self.conexion.commit()
+
+
