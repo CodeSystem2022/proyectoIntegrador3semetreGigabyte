@@ -10,5 +10,4 @@ Nombre del grupo: Gigabyte
 . Ramiro Valentin Riquelme - ramariquelme3596@gmail.com 
 . Andrés Nicolás sidoruk - 98sidoruk98@gmail.com
 . Gaston Duplessis - gasty_d@hotmail.com
-. Valentino Libonati-
-valentinogrosso1998@gmail.com
+. Valentino Libonati - valentinogrosso1998@gmail.com
