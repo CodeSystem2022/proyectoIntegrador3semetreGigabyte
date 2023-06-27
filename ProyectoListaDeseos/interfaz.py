@@ -77,3 +77,26 @@ class InterfazListaDeseos:
         print("Deseo agregado exitosamente.")
 
         self.actualizar_lista_deseos()  # Actualizar la lista mostrada en la interfaz
+
+    def eliminar_deseo(self):
+        # Código para eliminar un deseo de la base de datos por su ID
+        id_deseo = self.eliminar_entry.get()
+        if id_deseo:
+            self.conexion.eliminar_deseo(id_deseo)
+            print("Deseo eliminado exitosamente.")
+
+            self.actualizar_lista_deseos()  # Actualizar la lista mostrada en la interfaz
+        else:
+            print("No se ha ingresado un ID de deseo.")
+
+    def eliminar_todo(self):
+        # Código para eliminar todos los deseos de la base de datos
+        confirmacion = tk.messagebox.askquestion("Eliminar Todo", "¿Estás seguro de que deseas eliminar todos los deseos?")
+        if confirmacion == "yes":
+            self.conexion.eliminar_todo()
+            print("Todos los deseos han sido eliminados.")
+
+            self.actualizar_lista_deseos()  # Actualizar la lista mostrada en la interfaz
+
+    def iniciar(self):
+        self.ventana.mainloop()
