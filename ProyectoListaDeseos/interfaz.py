@@ -23,20 +23,22 @@ class InterfazListaDeseos:
         self.producto_label = tk.Label(self.ventana, text="Producto:", bg="black", fg="white")
         self.producto_label.grid(row=1, column=0, padx=5, pady=5, sticky="e")
 
-        self.producto_entry = tk.Entry(self.ventana, bg="black", fg="white")
+        self.producto_entry = tk.Entry(self.ventana, bg="black", fg="white", insertbackground="white")
         self.producto_entry.grid(row=1, column=1, padx=5, pady=5)
         # Etiqueta y campo de texto para ingresar la cantidad
         self.cantidad_label = tk.Label(self.ventana, text="Cantidad:", bg="black", fg="white")
         self.cantidad_label.grid(row=2, column=0, padx=5, pady=5, sticky="e")
 
-        self.cantidad_entry = tk.Entry(self.ventana, bg="black", fg="white")
+        self.cantidad_entry = tk.Entry(self.ventana, bg="black", fg="white", insertbackground="white")
         self.cantidad_entry.grid(row=2, column=1, padx=5, pady=5)
         # Etiqueta y campo de texto para ingresar el precio
         self.precio_label = tk.Label(self.ventana, text="Precio:", bg="black", fg="white")
         self.precio_label.grid(row=3, column=0, padx=5, pady=5, sticky="e")
 
-        self.precio_entry = tk.Entry(self.ventana, bg="black", fg="white")
+        self.precio_entry = tk.Entry(self.ventana, bg="black", fg="white", insertbackground="white")
         self.precio_entry.grid(row=3, column=1, padx=5, pady=5)
+        
+        self.precio_entry.focus()
         # Botón para agregar un deseo
         self.agregar_button = tk.Button(self.ventana, text="Agregar", command=self.agregar_deseo, bg="black",
                                         fg="white")
