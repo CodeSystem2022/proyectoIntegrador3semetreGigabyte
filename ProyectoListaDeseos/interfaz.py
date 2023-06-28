@@ -47,7 +47,7 @@ class InterfazListaDeseos:
         self.eliminar_label = tk.Label(self.ventana, text="ID Deseo a eliminar:", bg="black", fg="white")
         self.eliminar_label.grid(row=5, column=0, padx=5, pady=5, sticky="e")
 
-        self.eliminar_entry = tk.Entry(self.ventana, bg="black", fg="white")
+        self.eliminar_entry = tk.Entry(self.ventana, bg="black", fg="white", insertbackground="white")
         self.eliminar_entry.grid(row=5, column=1, padx=5, pady=5)
         # Botón para eliminar un deseo por ID
         self.eliminar_button = tk.Button(self.ventana, text="Eliminar por ID", command=self.eliminar_deseo, bg="black",
