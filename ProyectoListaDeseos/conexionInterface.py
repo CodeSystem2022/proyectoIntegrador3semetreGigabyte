@@ -1,3 +1,4 @@
+#ANGEL YUNES
 import psycopg2 # Importamos la base de datos, usaremos PostgresSQL
 class ConexionDB:#Definimos la clase
     # Establecemos la conexion con la base de datos
@@ -24,9 +25,9 @@ class ConexionDB:#Definimos la clase
             )
             """
         )
-        self.conexion.commit()
-
-    def agregar_deseo(self, producto, cantidad, precio):
+        self.conexion.commit()   
+#CARLOS CALVO
+    def agregar_deseo(self, producto, cantidad, precio):       
         # Insertamos los datos en la tabla 'deseos'
         cursor = self.conexion.cursor()
         cursor.execute(
@@ -48,7 +49,8 @@ class ConexionDB:#Definimos la clase
             (id_deseo,)
         )
         self.conexion.commit()
-
+        
+#RAMIRO RIQUELME
     def eliminar_todo(self):
         # Eliminamos todos los registros de la tabla 'deseos'
         cursor = self.conexion.cursor()

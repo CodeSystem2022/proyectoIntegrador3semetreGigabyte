@@ -1,3 +1,4 @@
+#GASTON DUPLESSIS
 import tkinter as tk
 from conexionInterface import ConexionDB
 from tkinter import messagebox
@@ -39,6 +40,7 @@ class InterfazListaDeseos:
         self.precio_entry.grid(row=3, column=1, padx=5, pady=5)
         
         self.precio_entry.focus()
+#ANDRES SIDORUK
         # Botón para agregar un deseo
         self.agregar_button = tk.Button(self.ventana, text="Agregar", command=self.agregar_deseo, bg="black",
                                         fg="white")
@@ -62,7 +64,7 @@ class InterfazListaDeseos:
         self.lista_deseos_text.grid(row=8, column=0, columnspan=2, padx=5, pady=5)
 
         self.actualizar_lista_deseos()  # Mostrar la lista de deseos al iniciar la interfaz
-
+#SANTIAGO JUAREZ
     def actualizar_lista_deseos(self):
         deseos = self.conexion.obtener_deseos()
 
@@ -85,7 +87,7 @@ class InterfazListaDeseos:
         print("Deseo agregado exitosamente.")
 
         self.actualizar_lista_deseos()  # Actualizar la lista mostrada en la interfaz
-
+#VALENTINO GROSSO
     def eliminar_deseo(self):
         # Código para eliminar un deseo de la base de datos por su ID
         id_deseo = self.eliminar_entry.get()
@@ -109,3 +111,4 @@ class InterfazListaDeseos:
 
     def iniciar(self):
         self.ventana.mainloop()
+
